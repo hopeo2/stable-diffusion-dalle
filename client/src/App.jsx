@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
-import { logo } from "./assets";
+import logo from "./assets/logoo.png";
 import { Home, CreatePost } from "./pages";
 
 const App = () => {
@@ -17,9 +17,9 @@ const App = () => {
                 </Link>
                 <Link
                     to="/create-post"
-                    className="font-inter font-medium bg-[#6469ff] text-white px-4 py-2 rounded-md"
+                    className="font-medium bg-[#6469ff] text-white px-4 py-2 rounded-md"
                 >
-                    Create
+                    ساختن تصویر جدید
                 </Link>
             </header>
             <main className="font-inter font-medium text-white px-4 py-2 rounded-md">

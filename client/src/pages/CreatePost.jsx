@@ -24,7 +24,7 @@ const CreatePost = () => {
                 const response = await axios.post(
                     "https://stablediffusionapi.com/api/v3/text2img",
                     {
-                        key: "NrcaMBwok8T0geGJdmdKauprsBuWIdRvHAWKxXpyIil79QAjIWKdqqi1brvh",
+                        key: "KksbKrigQdIXHe2pkntmlW5bo0xOkG72Moa1zaTgyxWvNybKjv5SLTCTwyrH",
                         prompt: form.prompt,
                         negative_prompt:
                             "((out of frame)), ((extra fingers)), mutated hands, ((poorly drawn hands)), ((poorly drawn face)), (((mutation))), (((deformed))), (((tiling))), ((naked)), ((tile)), ((fleshpile)), ((ugly)), (((abstract))), blurry, ((bad anatomy)), ((bad proportions)), ((extra limbs)), cloned face, (((skinny))), glitchy, ((extra breasts)), ((double torso)), ((extra arms)), ((extra hands)), ((mangled fingers)), ((missing breasts)), (missing lips), ((ugly face)), ((fat)), ((extra legs))",
@@ -95,20 +95,19 @@ const CreatePost = () => {
         <section className="max-w-7xl mx-auto">
             <div>
                 <h1 className="font-extrabold text-[#222328] text-[32px]">
-                    Create
+                    ساختن عکس جدید
                 </h1>
                 <p className="mt-2 text-[#666e75] text-[14px] max-w-[500px]">
-                    Generate an imaginative image through DALL-E AI and share it
-                    with the community
+                یک تصویر تخیلی از طریق هوش مصنوعی ایجاد کنید و آن را با جامعه به اشتراک بگذارید
                 </p>
             </div>
             <form className="mt-16 max-w-3xl" onSubmit={handleSubmit}>
                 <div className="flex flex-col gap-5">
                     <FormField
-                        labelName="Your Name"
+                        labelName="نام شما"
                         type="text"
                         name="name"
-                        placeholder="Ex., john doe"
+                        placeholder="مثلا...,روح الله"
                         value={form.name}
                         handleChange={handleChange}
                     />
@@ -116,7 +115,7 @@ const CreatePost = () => {
                         labelName="Prompt"
                         type="text"
                         name="prompt"
-                        placeholder="An Impressionist oil painting of sunflowers in a purple vase…"
+                        placeholder="متن مورد نظر خود را به زبان انگلیسی بنویسید تا نتیجه مطلوب تری حاصل شود."
                         value={form.prompt}
                         handleChange={handleChange}
                         isSupriseMe
@@ -145,7 +144,7 @@ const CreatePost = () => {
                     </div>
                     {form.photogeneratetime ? (
                         <span className="text-[#666e75]">
-                            Image-Generate-Time: {form.photogeneratetime}
+                            زمان تولید عکس : {form.photogeneratetime} ثانیه
                         </span>
                     ) : (
                         <span></span>
@@ -157,19 +156,18 @@ const CreatePost = () => {
                         onClick={generateImage}
                         className=" text-white bg-green-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
                     >
-                        {generatingImg ? "Generating..." : "Generate"}
+                        {generatingImg ? "در حال تولید ..." : "تولید کردن"}
                     </button>
                 </div>
                 <div className="mt-10">
                     <p className="mt-2 text-[#666e75] text-[14px]">
-                        ** Once you have created the image you want, you can
-                        share it with others in the community **
+                    ** هنگامی که تصویر مورد نظر خود را ایجاد کردید، می توانید آن را با سایرین در انجمن به اشتراک بگذارید **
                     </p>
                     <button
                         type="submit"
                         className="mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
                     >
-                        {loading ? "Sharing..." : "Share with the Community"}
+                        {loading ? "در حال انتشار..." : "انتشار در وبسایت"}
                     </button>
                 </div>
             </form>
